@@ -14,17 +14,16 @@ UCLASS()
 class AURA_API AAuraEnemy : public AAuraCharacterBase, public IEnemyInterface
 {
 
-
 public:
+	/**Enemy Interface**/
 	virtual void HighlightActor() override;
 	virtual void UnHighlightActor() override;
+	/**End Enemy Interface**/
 	AAuraEnemy();
 
 private:
 	GENERATED_BODY()
-};
 
-inline AAuraEnemy::AAuraEnemy()
-{
-	GetMesh() -> SetCollisionResponseToChannel(ECC_Visibility, ECR_Block);
-}
+protected:
+	virtual void BeginPlay() override;
+};
