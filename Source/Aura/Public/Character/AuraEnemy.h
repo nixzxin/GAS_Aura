@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Character/AuraCharacterBase.h"
+#include "Components/WidgetComponent.h"
 #include "Interaction/EnemyInterface.h"
 #include "AuraEnemy.generated.h"
 
@@ -24,6 +25,7 @@ public:
 	/** Combat Interface **/
 	virtual int32 GetPlayerLevel() override;
 	/** End Combat Interface **/
+
 protected:
 	virtual void BeginPlay() override;
 	virtual void InitAbilityActorInfo() override;
