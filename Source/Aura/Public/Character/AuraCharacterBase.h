@@ -50,7 +50,7 @@ protected:
 	
 	void ApplyEffectToSelf(const TSubclassOf<UGameplayEffect>& DefaultAttributes, float Level) const;
 	
-	void InitializeDefaultAttributes() const;
+	 virtual void InitializeDefaultAttributes() const;
 
 private:
 	UPROPERTY(EditAnywhere, Category = "Abilities")
