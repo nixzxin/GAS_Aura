@@ -26,7 +26,7 @@ public:
 	virtual void PlayerTick(float DeltaTime) override;
 
 	UFUNCTION(Client, Reliable)
-	void ShowDamageNumber(float DamageAmount, ACharacter* TargetCharacter);
+	void ShowDamageNumber(float DamageAmount, ACharacter* TargetCharacter, bool bBlockedHit, bool bCriticalHit);
 protected:
 	virtual void BeginPlay() override;
 	virtual void SetupInputComponent() override;
@@ -67,7 +67,7 @@ private:
 	
 	FVector CachedDestination = FVector::ZeroVector;
 	float FollowTime = 0.0f;
-	float ShortPressThreshold = 0.5f;
+	float ShortPressThreshold = 0.3f;
 	bool bAutoRunning = false;
 	bool bTargeting = false;
 	UPROPERTY(EditDefaultsOnly)
